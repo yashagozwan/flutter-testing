@@ -7,7 +7,8 @@ import 'package:flutter_testing/domain/models/user_model.dart';
 import 'package:flutter_testing/domain/repository/user_repository.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton(as: UserRepository, env: [Environment.prod])
+@prod
+@LazySingleton(as: UserRepository)
 final class UserRepositoryImpl implements UserRepository {
   @override
   Future<Either<ResultFailure, ResultSuccess<List<UserModel>>>> getUsers(

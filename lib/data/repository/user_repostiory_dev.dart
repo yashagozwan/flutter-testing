@@ -5,7 +5,8 @@ import 'package:flutter_testing/domain/models/user_model.dart';
 import 'package:flutter_testing/domain/repository/user_repository.dart';
 import 'package:injectable/injectable.dart';
 
-@Singleton(as: UserRepository, env: [Environment.test])
+@dev
+@Singleton(as: UserRepository)
 class UserRepositoryDev implements UserRepository {
   @override
   Future<Either<ResultFailure, ResultSuccess<List<UserModel>>>> getUsers(
